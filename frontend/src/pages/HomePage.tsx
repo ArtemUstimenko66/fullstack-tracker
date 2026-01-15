@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import TimeEntryList from '@/components/TimeTracker/TimeEntryList';
 
 export default function HomePage() {
   return (
@@ -23,6 +24,8 @@ export default function HomePage() {
             </Button>
           </Link>
         </header>
+
+        <TimeEntryList />
       </div>
     </div>
   );
