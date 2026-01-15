@@ -26,8 +26,10 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 export default function TimeEntryForm() {
+  const navigate = useNavigate();
   const [date, setDate] = useState<Date>(new Date());
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -62,6 +64,7 @@ export default function TimeEntryForm() {
 
       await timeEntriesApi.create(dto);
 
+      navigate('/');
     } catch (error: any) {
       console.error('Error creating entry:', error);
       const message = error.response?.data?.message || 'Failed to create entry';
